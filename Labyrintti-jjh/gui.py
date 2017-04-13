@@ -9,7 +9,15 @@ class GUI(QtWidgets.QWidget):
     def __init__(self):
         super(GUI, self).__init__()
         
+        self.setMinimumSize(400, 400)
         self.initUI()
+        
+        self.bgColor = QColor(229, 134, 12)
+        self.bgBrush = QBrush(self.bgColor)
+        self.palette = QPalette()
+        self.palette.setBrush(QPalette.Window, self.bgBrush)
+        self.setPalette(self.palette)
+        
         
     def initUI(self):
         
@@ -27,10 +35,15 @@ class GUI(QtWidgets.QWidget):
         moveRightBtn = QPushButton("Right")
         moveRightBtn.setIcon(self.style().standardIcon(QStyle.SP_ArrowRight))   
          
-
+        scene = QGraphicsScene()
+        scene.setSceneRect(0, 0, 200, 200)
+        
+        view = QGraphicsView(scene)
         
         mainLayout = QVBoxLayout()
-        mainLayout.addStretch(1)
+        #mainLayout.addStretch(1)
+        mainLayout.addWidget(view)
+        
         buttonLayout = QHBoxLayout()
         
         moveLayout = QVBoxLayout()
@@ -54,7 +67,7 @@ class GUI(QtWidgets.QWidget):
         moveDownLayout.addStretch(1)
         moveLayout.addLayout(moveDownLayout)  
         
-        #horizontal.addWidget(view)
+        
         buttonLayout.addLayout(moveLayout)    
             
         mainLayout.addLayout(buttonLayout)

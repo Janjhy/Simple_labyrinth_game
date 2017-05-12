@@ -92,7 +92,7 @@ class GUI(QtWidgets.QWidget):
         self.moveRightBtn.setIcon(self.style().standardIcon(QStyle.SP_ArrowRight))   
         self.moveRightBtn.clicked.connect(self.move_player_right)
         
-        self.changeLevelBtn = QPushButton("Change level")
+        self.changeLevelBtn = QPushButton("Change floor")
         self.changeLevelBtn.clicked.connect(self.change_level)
         
         self.useLadderBtn = QPushButton("Use ladder")

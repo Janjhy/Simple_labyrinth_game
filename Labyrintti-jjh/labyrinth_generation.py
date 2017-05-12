@@ -7,7 +7,7 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.Qt import *
 from labyrinth import *
 
-class LabyrinthGeneration(object):
+class LabyrinthGenerator(object):
     
     def __init__(self, map_multiplier, square_size, level_label):
         

@@ -11,7 +11,7 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.Qt import *
 from random import randrange
 import gui
-from labyrinth_generation import LabyrinthGeneration
+from labyrinth_generation import LabyrinthGenerator
 import pickle
 import time
 
@@ -31,7 +31,7 @@ class Labyrinth(object):
 
         
 
-        self.generated_labyrinth =  LabyrinthGeneration(self.map_multiplier, self.square_size, self.level_label)
+        self.generated_labyrinth =  LabyrinthGenerator(self.map_multiplier, self.square_size, self.level_label)
         
             
         self.squares = self.generated_labyrinth.generate_level_one()
